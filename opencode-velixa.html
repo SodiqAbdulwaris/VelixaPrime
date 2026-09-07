@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Velixa Prime</title>
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{--bg:#0a0a0a;--fg:#f5f5f5;--muted:#888;--accent:#fff;--border:#222;--section-gap:120px}
+  html{scroll-behavior:smooth;font-size:16px}
+  body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--fg);line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:var(--fg);text-decoration:none}
+  section{padding:var(--section-gap) 24px;max-width:1100px;margin:0 auto}
+  .label{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:16px;display:block}
+  h2{font-size:clamp(1.6rem,4vw,2.4rem);font-weight:700;line-height:1.15;letter-spacing:-.02em}
+  h3{font-size:1.1rem;font-weight:600}
+  p{color:var(--muted);max-width:600px}
+
+  /* NAV */
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:20px 40px;background:rgba(10,10,10,.85);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+  .logo{font-weight:700;font-size:1rem;letter-spacing:.08em;text-transform:uppercase}
+  .nav-links{display:flex;gap:32px}
+  .nav-links a{font-size:.85rem;color:var(--muted);transition:color .2s}
+  .nav-links a:hover{color:var(--fg)}
+
+  /* HERO */
+  #hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding-top:120px}
+  .hero-labels{display:flex;gap:12px;margin-bottom:24px;flex-wrap:wrap}
+  .hero-labels span{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;padding:6px 14px;border:1px solid var(--border);border-radius:100px;color:var(--muted)}
+  #hero h1{font-size:clamp(2.6rem,6vw,4.5rem);font-weight:800;line-height:1.05;letter-spacing:-.03em;max-width:700px;margin-bottom:24px}
+  #hero p{font-size:1.05rem;margin-bottom:40px}
+  .btn-group{display:flex;gap:16px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;font-size:.85rem;font-weight:600;border-radius:4px;transition:all .2s;cursor:pointer;border:none;font-family:inherit}
+  .btn-primary{background:var(--fg);color:var(--bg)}
+  .btn-primary:hover{opacity:.85}
+  .btn-outline{background:transparent;color:var(--fg);border:1px solid var(--border)}
+  .btn-outline:hover{border-color:var(--fg)}
+  .arrow{font-size:1.1em}
+
+  /* ABOUT */
+  #about{border-top:1px solid var(--border)}
+  #about h2{margin-bottom:24px}
+  #about p{margin-bottom:16px}
+  #about blockquote{border-left:2px solid var(--fg);padding-left:20px;margin-top:24px;color:var(--fg);font-size:1.05rem;font-style:italic;max-width:560px}
+
+  /* SERVICES */
+  #services{border-top:1px solid var(--border)}
+  #services h2{margin-bottom:48px}
+  .services-grid{display:grid;gap:0}
+  .service-item{display:grid;grid-template-columns:60px 1fr;gap:16px;padding:32px 0;border-top:1px solid var(--border)}
+  .service-item:last-child{border-bottom:1px solid var(--border)}
+  .service-num{font-size:.8rem;color:var(--muted);padding-top:4px;font-variant-numeric:tabular-nums}
+  .service-item h3{margin-bottom:8px}
+  .service-item p{font-size:.9rem;line-height:1.65}
+
+  /* PHILOSOPHY */
+  #philosophy{border-top:1px solid var(--border);text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center}
+  #philosophy h2{font-size:clamp(1.8rem,4.5vw,3rem);max-width:800px;line-height:1.2}
+  #philosophy p{margin:24px auto 0;text-align:center}
+
+  /* APPROACH */
+  #approach{border-top:1px solid var(--border)}
+  .approach-labels{display:flex;gap:8px;margin-bottom:24px;flex-wrap:wrap}
+  .approach-labels span{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+  .approach-labels span.active{color:var(--fg)}
+  #approach h2{margin-bottom:48px;font-size:clamp(2rem,5vw,3.5rem)}
+  .approach-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+  .approach-step{padding:32px;border-left:1px solid var(--border)}
+  .approach-step:first-child{border-left:none;padding-left:0}
+  .approach-step .step-num{font-size:.75rem;color:var(--muted);margin-bottom:16px;letter-spacing:.1em;text-transform:uppercase}
+  .approach-step h3{margin-bottom:12px;font-size:1rem}
+  .approach-step p{font-size:.88rem;line-height:1.65}
+
+  /* EXPERIENCE */
+  #experience{border-top:1px solid var(--border);text-align:center;display:flex;flex-direction:column;align-items:center}
+  #experience h2{margin-bottom:16px}
+  .big-number{font-size:clamp(4rem,10vw,8rem);font-weight:800;letter-spacing:-.04em;line-height:1;margin-bottom:8px}
+  .exp-sub{font-size:.85rem;color:var(--muted);margin-bottom:32px;max-width:500px}
+  .tags{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+  .tags span{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;padding:8px 18px;border:1px solid var(--border);border-radius:100px;color:var(--muted)}
+
+  /* CTA */
+  #cta{border-top:1px solid var(--border);text-align:center;display:flex;flex-direction:column;align-items:center}
+  #cta h2{margin-bottom:20px;font-size:clamp(1.8rem,4vw,2.8rem)}
+  #cta p{margin-bottom:32px;text-align:center}
+
+  /* FOOTER */
+  footer{border-top:1px solid var(--border);padding:60px 24px 40px;max-width:1100px;margin:0 auto}
+  .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px}
+  .footer-brand p{font-size:.88rem;color:var(--muted);max-width:280px;margin-top:12px}
+  .footer-col h4{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--fg);margin-bottom:16px}
+  .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-col li a{font-size:.85rem;color:var(--muted);transition:color .2s}
+  .footer-col li a:hover{color:var(--fg)}
+  .footer-bottom{border-top:1px solid var(--border);padding-top:24px;text-align:center;font-size:.75rem;color:var(--muted)}
+
+  @media(max-width:768px){
+    :root{--section-gap:80px}
+    nav{padding:16px 20px}
+    .nav-links{display:none}
+    section{padding-left:20px;padding-right:20px}
+    .approach-grid{grid-template-columns:1fr;gap:0}
+    .approach-step{border-left:none;border-top:1px solid var(--border);padding:24px 0}
+    .approach-step:first-child{padding-top:0}
+    .footer-grid{grid-template-columns:1fr 1fr;gap:32px}
+    .service-item{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">Velixa Prime</div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#approach">How We Work</a>
+    <a href="#cta">Contact</a>
+  </div>
+</nav>
+
+<section id="hero">
+  <div class="hero-labels">
+    <span>Strategy</span>
+    <span>Innovation</span>
+    <span>Execution</span>
+  </div>
+  <h1>We help you move forward.</h1>
+  <p>We work with businesses and startups on marketing, innovation, process improvement, project management, and practical AI solutions.</p>
+  <div class="btn-group">
+    <a href="#cta" class="btn btn-primary">Start a Conversation <span class="arrow">↗</span></a>
+    <a href="#services" class="btn btn-outline">Our Services</a>
+  </div>
+</section>
+
+<section id="about">
+  <span class="label">About</span>
+  <h2>About Velixa Prime</h2>
+  <p><strong>Clear thinking. Practical solutions. Better execution.</strong></p>
+  <p>Velixa Prime helps businesses solve problems, improve how they work, and make better decisions.</p>
+  <p>Our experience spans more than 15 years across banking and consumer goods. We bring that experience into every project, combining business thinking with practical technology to help clients move from ideas to results.</p>
+  <blockquote>We focus on what needs to change, how to make it happen, and what comes next.</blockquote>
+</section>
+
+<section id="services">
+  <span class="label">Services</span>
+  <h2>What We Do</h2>
+  <div class="services-grid">
+    <div class="service-item">
+      <span class="service-num">01</span>
+      <div><h3>Marketing</h3><p>We help businesses sharpen their positioning, understand their customers, and build marketing plans that make sense for where they want to go.</p></div>
+    </div>
+    <div class="service-item">
+      <span class="service-num">02</span>
+      <div><h3>Innovation</h3><p>Have an idea but not sure what to do with it? We help turn ideas and opportunities into practical projects that can actually move forward.</p></div>
+    </div>
+    <div class="service-item">
+      <span class="service-num">03</span>
+      <div><h3>Process Mapping</h3><p>We look at how work is currently being done, identify where things slow down or break down, and help create simpler, clearer processes.</p></div>
+    </div>
+    <div class="service-item">
+      <span class="service-num">04</span>
+      <div><h3>Project Management</h3><p>From planning to delivery, we help keep projects organised, teams aligned, and priorities clear.</p></div>
+    </div>
+    <div class="service-item">
+      <span class="service-num">05</span>
+      <div><h3>AI Consulting</h3><p>We help businesses find useful ways to apply AI to everyday work, decision-making, operations, and customer service.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="philosophy">
+  <span class="label">Philosophy</span>
+  <h2>Good strategy should make things simpler.</h2>
+  <p>The right strategy should help you understand what to do next — not give you another complicated document to work through.</p>
+</section>
+
+<section id="approach">
+  <div class="approach-labels">
+    <span class="active">Approach</span>
+  </div>
+  <h2>Understand. Map. Move.</h2>
+  <div class="approach-grid">
+    <div class="approach-step">
+      <div class="step-num">01 — Understand</div>
+      <h3>We start by getting to know the business, the problem, and what you are trying to achieve.</h3>
+    </div>
+    <div class="approach-step">
+      <div class="step-num">02 — Map</div>
+      <h3>We break down the situation, identify what is getting in the way, and work out where the biggest opportunities are.</h3>
+    </div>
+    <div class="approach-step">
+      <div class="step-num">03 — Move</div>
+      <h3>We turn the plan into action, helping teams stay focused and keep things moving.</h3>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <span class="label">Experience</span>
+  <h2>Experience That Matters</h2>
+  <div class="big-number">15+</div>
+  <p class="exp-sub">Experience across banking and consumer goods, with work spanning:</p>
+  <div class="tags">
+    <span>Strategy</span>
+    <span>Innovation</span>
+    <span>Operations</span>
+    <span>Technology</span>
+  </div>
+</section>
+
+<section id="cta">
+  <h2>Have a challenge to solve?</h2>
+  <p>Let's talk about where you are, where you want to go, and what it will take to get there.</p>
+  <a href="mailto:hello@velixaprime.com" class="btn btn-primary">Start a Conversation <span class="arrow">↗</span></a>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo">Velixa Prime</div>
+      <p>We help businesses make better decisions, improve how they work, and turn good ideas into action.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Inquiries & Consultations</h4>
+      <ul><li><a href="mailto:hello@velixaprime.com">hello@velixaprime.com</a></li></ul>
+    </div>
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="#about">About Velixa Prime</a></li>
+        <li><a href="#services">Our Services</a></li>
+        <li><a href="#approach">How We Work</a></li>
+        <li><a href="#cta">Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#services">Marketing</a></li>
+        <li><a href="#services">Innovation</a></li>
+        <li><a href="#services">Process Mapping</a></li>
+        <li><a href="#services">Project Management</a></li>
+        <li><a href="#services">AI Consulting</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 Velixa Prime. All rights reserved.</div>
+</footer>
+
+</body>
+</html>

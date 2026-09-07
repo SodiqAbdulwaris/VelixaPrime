@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Velixa Prime</title>
+  <style>
+    /* Color palette from your Coolors image */
+    :root {
+      --light-gray: #d9d9d9;
+      --dark-gray: #4d4d4d;
+      --teal-blue: #007b7f;
+      --bright-blue: #0077ff;
+      --sky-blue: #66ccff;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background-color: var(--light-gray);
+      color: var(--dark-gray);
+    }
+
+    header {
+      background: var(--teal-blue);
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    header p {
+      margin-top: 0.5rem;
+      font-size: 1.2rem;
+    }
+
+    section {
+      padding: 3rem 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .intro {
+      text-align: center;
+    }
+
+    .intro h2 {
+      color: var(--bright-blue);
+      margin-bottom: 1rem;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .feature {
+      background: white;
+      border-radius: 8px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+    }
+
+    .feature:hover {
+      transform: translateY(-5px);
+    }
+
+    .feature h3 {
+      color: var(--teal-blue);
+      margin-top: 0;
+    }
+
+    footer {
+      background: var(--bright-blue);
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+    }
+
+    footer a {
+      color: var(--sky-blue);
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Velixa Prime</h1>
+    <p>We bring the advantage</p>
+  </header>
+
+  <section class="intro">
+    <h2>Practical Strategy. Real Results.</h2>
+    <p>
+      Velixa Prime brings marketing, innovation process mapping, project management, 
+      and AI consulting expertise to businesses and startups. With over 15 years of 
+      experience across banking and consumer goods, we help you plan smarter, execute 
+      better, and grow with clarity.
+    </p>
+  </section>
+
+  <section class="features">
+    <div class="feature">
+      <h3>Marketing</h3>
+      <p>Craft campaigns that resonate and drive measurable growth.</p>
+    </div>
+    <div class="feature">
+      <h3>Innovation Mapping</h3>
+      <p>Visualize and streamline your innovation processes for maximum impact.</p>
+    </div>
+    <div class="feature">
+      <h3>Project Management</h3>
+      <p>Execute with precision and efficiency, ensuring projects deliver results.</p>
+    </div>
+    <div class="feature">
+      <h3>AI Consulting</h3>
+      <p>Harness AI to unlock smarter decisions and future-ready strategies.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>Ready to grow with clarity? <a href="mailto:info@velixaprime.com">Contact Us</a></p>
+  </footer>
+</body>
+</html>

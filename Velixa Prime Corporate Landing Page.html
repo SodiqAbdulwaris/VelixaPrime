@@ -1,0 +1,1319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Velixa Prime brings marketing, innovation process mapping, project management, and AI consulting expertise to businesses and startups. We bring the advantage.">
+    <meta name="keywords" content="Velixa Prime, Strategy Consulting, Innovation, Process Mapping, Project Management, AI Consulting, Growth Partner">
+    <meta name="author" content="Velixa Prime">
+    <meta property="og:title" content="Velixa Prime — We Bring The Advantage">
+    <meta property="og:description" content="Practical strategy. Real results. A true growth partner combining 15+ years of experience across banking and consumer goods.">
+    <meta property="og:type" content="website">
+    
+    <title>Velixa Prime — We Bring The Advantage</title>
+
+    <!-- Google Fonts: Syne (Headings) & Plus Jakarta Sans (Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* CSS CUSTOM PROPERTIES (DESIGN SYSTEM) */
+        :root {
+            /* Palette: Refined Neutral & Editorial Accent */
+            --bg-body: #F7F6F2;
+            --bg-surface: #FFFFFF;
+            --bg-dark: #0D0E12;
+            --bg-dark-surface: #161820;
+            
+            --text-primary: #111318;
+            --text-secondary: #585E6A;
+            --text-muted: #8C92A0;
+            
+            --text-on-dark: #F2F4F8;
+            --text-muted-dark: #9AA0AE;
+            
+            --accent: #C85A32; /* Warm Architectural Terracotta */
+            --accent-hover: #AA4723;
+            --accent-soft: rgba(200, 90, 50, 0.08);
+            
+            --border-light: rgba(17, 19, 24, 0.12);
+            --border-dark: rgba(255, 255, 255, 0.12);
+            
+            /* Typography Scale */
+            --font-display: 'Syne', sans-serif;
+            --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            
+            /* Spacing & Layout */
+            --container-max: 1280px;
+            --nav-height: 80px;
+            --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* RESET & BASE STYLES */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            font-family: inherit;
+            cursor: pointer;
+            border: none;
+            background: none;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            width: 100%;
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 1.75rem;
+        }
+
+        /* REUSABLE EDITORIAL TYPOGRAPHY */
+        .section-label {
+            font-family: var(--font-body);
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--accent);
+            display: inline-block;
+            margin-bottom: 1.25rem;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            padding: 1rem 2rem;
+            background-color: var(--text-primary);
+            color: var(--bg-body);
+            font-family: var(--font-body);
+            font-size: 0.875rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            border-radius: 2px;
+            transition: var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent);
+            color: #FFFFFF;
+            transform: translateY(-2px);
+        }
+
+        .btn-primary:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 4px;
+        }
+
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.875rem 1.75rem;
+            border: 1px solid var(--border-light);
+            color: var(--text-primary);
+            font-size: 0.875rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            transition: var(--transition-smooth);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--text-primary);
+            background-color: var(--text-primary);
+            color: var(--bg-body);
+        }
+
+        /* HEADER & NAVIGATION */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--nav-height);
+            z-index: 1000;
+            transition: var(--transition-smooth);
+            border-bottom: 1px solid rgba(17, 19, 24, 0);
+        }
+
+        .header.scrolled {
+            background-color: rgba(247, 246, 242, 0.92);
+            -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-light);
+            height: 72px;
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 100%;
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.35rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-dot {
+            width: 7px;
+            height: 7px;
+            background-color: var(--accent);
+            display: inline-block;
+            border-radius: 50%;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+        }
+
+        .nav-link {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            transition: var(--transition-smooth);
+            position: relative;
+            padding: 0.25rem 0;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0%;
+            height: 1px;
+            background-color: var(--accent);
+            transition: var(--transition-smooth);
+        }
+
+        .nav-link:hover {
+            color: var(--text-primary);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 28px;
+            height: 18px;
+            z-index: 1001;
+            padding: 0;
+        }
+
+        .mobile-toggle span {
+            display: block;
+            width: 100%;
+            height: 2px;
+            background-color: var(--text-primary);
+            transition: var(--transition-smooth);
+        }
+
+        /* Mobile Drawer */
+        .mobile-nav-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: var(--bg-dark);
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 3rem 2rem;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+        }
+
+        .mobile-nav-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .mobile-nav-links {
+            display: flex;
+            flex-direction: column;
+            gap: 1.75rem;
+        }
+
+        .mobile-nav-links a {
+            font-family: var(--font-display);
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: var(--text-on-dark);
+            transition: var(--transition-smooth);
+        }
+
+        .mobile-nav-links a:hover {
+            color: var(--accent);
+            padding-left: 0.5rem;
+        }
+
+        .mobile-nav-cta {
+            margin-top: 2.5rem;
+            align-self: flex-start;
+        }
+
+        /* HERO SECTION */
+        .hero-section {
+            padding-top: calc(var(--nav-height) + 4rem);
+            padding-bottom: 6rem;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-content {
+            max-width: 680px;
+        }
+
+        .hero-eyebrow {
+            font-size: 0.8125rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .hero-eyebrow::before {
+            content: '';
+            width: 24px;
+            height: 1px;
+            background-color: var(--accent);
+        }
+
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.75rem, 5.5vw, 4.75rem);
+            font-weight: 800;
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            color: var(--text-primary);
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+        }
+
+        .hero-description {
+            font-size: clamp(1.05rem, 1.3vw, 1.25rem);
+            color: var(--text-secondary);
+            margin-bottom: 2.75rem;
+            line-height: 1.65;
+            font-weight: 400;
+            max-width: 580px;
+        }
+
+        .hero-actions {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-visual {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            min-height: 420px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Abstract Systems Visual SVG Diagram */
+        .system-diagram {
+            width: 100%;
+            max-width: 480px;
+            height: auto;
+        }
+
+        .system-diagram circle,
+        .system-diagram path,
+        .system-diagram rect {
+            transition: all 0.6s ease;
+        }
+
+        /* CREDIBILITY STRIP */
+        .credibility-strip {
+            border-top: 1px solid var(--border-light);
+            border-bottom: 1px solid var(--border-light);
+            background-color: rgba(255, 255, 255, 0.4);
+            padding: 2rem 0;
+        }
+
+        .credibility-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .credibility-item {
+            display: flex;
+            flex-direction: column;
+            padding: 0 1rem;
+            border-left: 1px solid var(--border-light);
+        }
+
+        .credibility-item:first-child {
+            border-left: none;
+            padding-left: 0;
+        }
+
+        .credibility-val {
+            font-family: var(--font-display);
+            font-size: 1.125rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            color: var(--text-primary);
+            text-transform: uppercase;
+        }
+
+        .credibility-lbl {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-top: 0.25rem;
+        }
+
+        /* ABOUT SECTION */
+        .about-section {
+            padding: 8rem 0;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 5rem;
+            align-items: flex-start;
+        }
+
+        .about-statement {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 3.5vw, 3.25rem);
+            font-weight: 700;
+            line-height: 1.15;
+            color: var(--text-primary);
+            letter-spacing: -0.01em;
+        }
+
+        .about-body p {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.75rem;
+            line-height: 1.75;
+        }
+
+        .about-highlight-box {
+            margin-top: 2.5rem;
+            padding: 2rem;
+            background-color: var(--bg-surface);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 4px 4px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+        }
+
+        .about-highlight-box p {
+            font-size: 1rem;
+            color: var(--text-primary);
+            font-weight: 500;
+            margin-bottom: 0;
+        }
+
+        /* SERVICES / EXPERTISE SECTION */
+        .services-section {
+            padding: 8rem 0;
+            background-color: var(--bg-surface);
+            border-top: 1px solid var(--border-light);
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .services-header {
+            margin-bottom: 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .services-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.25rem, 4vw, 3.25rem);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: -0.01em;
+        }
+
+        .services-list {
+            display: flex;
+            flex-direction: column;
+            border-top: 1px solid var(--border-light);
+        }
+
+        .service-row {
+            display: grid;
+            grid-template-columns: 80px 1.2fr 2fr 40px;
+            gap: 2rem;
+            padding: 2.75rem 1rem;
+            border-bottom: 1px solid var(--border-light);
+            align-items: center;
+            transition: var(--transition-smooth);
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .service-row:hover {
+            background-color: var(--bg-body);
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+
+        .service-num {
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .service-name {
+            font-family: var(--font-display);
+            font-size: 1.65rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .service-desc {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            padding-right: 2rem;
+        }
+
+        .service-arrow {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            transition: var(--transition-smooth);
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .service-row:hover .service-arrow {
+            color: var(--accent);
+            transform: translateX(6px);
+        }
+
+        /* PHILOSOPHY BREAK SECTION (DARK) */
+        .philosophy-section {
+            background-color: var(--bg-dark);
+            color: var(--text-on-dark);
+            padding: 9rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .philosophy-content {
+            max-width: 960px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .philosophy-quote {
+            font-family: var(--font-display);
+            font-size: clamp(2.25rem, 5vw, 4.25rem);
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            text-transform: uppercase;
+            margin-bottom: 2.5rem;
+            color: #FFFFFF;
+        }
+
+        .philosophy-sub {
+            font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+            color: var(--text-muted-dark);
+            max-width: 680px;
+            margin: 0 auto;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+
+        /* APPROACH SECTION */
+        .approach-section {
+            padding: 8rem 0;
+        }
+
+        .approach-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            margin-top: 4rem;
+            position: relative;
+        }
+
+        .approach-card {
+            background-color: var(--bg-surface);
+            padding: 3rem 2rem;
+            border: 1px solid var(--border-light);
+            position: relative;
+            transition: var(--transition-smooth);
+        }
+
+        .approach-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--accent);
+            box-shadow: 0 16px 40px rgba(0,0,0,0.04);
+        }
+
+        .approach-step {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+            line-height: 1;
+        }
+
+        .approach-title {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .approach-desc {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.65;
+        }
+
+        /* EXPERIENCE SECTION */
+        .experience-section {
+            padding: 7rem 0;
+            background-color: var(--bg-surface);
+            border-top: 1px solid var(--border-light);
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .experience-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .experience-big-stat {
+            display: flex;
+            align-items: baseline;
+            gap: 1.5rem;
+        }
+
+        .experience-number {
+            font-family: var(--font-display);
+            font-size: clamp(6rem, 12vw, 10rem);
+            font-weight: 800;
+            line-height: 0.85;
+            color: var(--text-primary);
+            letter-spacing: -0.04em;
+        }
+
+        .experience-stat-label {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--accent);
+            max-width: 160px;
+            line-height: 1.2;
+        }
+
+        .experience-keywords {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .keyword-item {
+            padding: 1.5rem;
+            border: 1px solid var(--border-light);
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .keyword-item::after {
+            content: '—';
+            color: var(--accent);
+        }
+
+        /* FINAL CTA SECTION */
+        .cta-section {
+            padding: 9rem 0;
+            text-align: center;
+            background-color: var(--bg-body);
+        }
+
+        .cta-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 5vw, 4.25rem);
+            font-weight: 800;
+            text-transform: uppercase;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-desc {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+        }
+
+        /* FOOTER & CONTACT */
+        .footer {
+            background-color: var(--bg-dark);
+            color: var(--text-on-dark);
+            padding: 6rem 0 3rem 0;
+            border-top: 1px solid var(--border-dark);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 5rem;
+        }
+
+        .footer-brand .logo {
+            color: #FFFFFF;
+            margin-bottom: 1.25rem;
+        }
+
+        .footer-tagline {
+            color: var(--text-muted-dark);
+            font-size: 0.95rem;
+            margin-bottom: 1.75rem;
+        }
+
+        .contact-placeholder-box {
+            padding: 1.25rem;
+            border: 1px dashed var(--border-dark);
+            border-radius: 4px;
+            background-color: rgba(255,255,255,0.02);
+            margin-top: 1rem;
+        }
+
+        .contact-placeholder-box p {
+            font-size: 0.8125rem;
+            color: var(--text-muted-dark);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .contact-email {
+            color: #FFFFFF;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .footer-col-title {
+            font-family: var(--font-body);
+            font-size: 0.8125rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.875rem;
+        }
+
+        .footer-links a {
+            color: var(--text-muted-dark);
+            font-size: 0.9rem;
+            transition: var(--transition-smooth);
+        }
+
+        .footer-links a:hover {
+            color: #FFFFFF;
+        }
+
+        .footer-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 2.5rem;
+            border-top: 1px solid var(--border-dark);
+            font-size: 0.875rem;
+            color: var(--text-muted-dark);
+        }
+
+        .back-to-top {
+            color: var(--text-on-dark);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.8125rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            transition: var(--transition-smooth);
+        }
+
+        .back-to-top:hover {
+            color: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        /* ACCESSIBILITY & FOCUS STATES */
+        :focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 3px;
+        }
+
+        /* RESPONSIVE BREAKPOINTS */
+        @media (max-width: 1024px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .hero-visual {
+                min-height: 320px;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .service-row {
+                grid-template-columns: 60px 1fr 40px;
+                gap: 1.5rem;
+            }
+
+            .service-desc {
+                grid-column: 2 / 4;
+                padding-right: 0;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu, .nav-cta-desktop {
+                display: none;
+            }
+
+            .mobile-toggle {
+                display: flex;
+            }
+
+            .credibility-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem 1rem;
+            }
+
+            .credibility-item {
+                border-left: none;
+                padding-left: 0;
+            }
+
+            .approach-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .experience-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1.5rem;
+                align-items: flex-start;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .service-row {
+                grid-template-columns: 40px 1fr;
+                padding: 2rem 0;
+            }
+
+            .service-arrow {
+                display: none;
+            }
+
+            .keyword-item {
+                font-size: 0.95rem;
+            }
+        }
+
+        /* REDUCED MOTION PREFERENCE */
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <div class="container nav-container">
+            <a href="#" class="logo" aria-label="Velixa Prime Home">
+                VELIXA PRIME <span class="logo-dot"></span>
+            </a>
+
+            <nav class="nav-menu" aria-label="Main Navigation">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#approach" class="nav-link">Approach</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+
+            <div class="nav-cta-desktop">
+                <a href="#contact" class="btn-primary">LET'S TALK ↗</a>
+            </div>
+
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Navigation Menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- MOBILE NAVIGATION OVERLAY -->
+    <div class="mobile-nav-overlay" id="mobileOverlay" aria-hidden="true">
+        <nav class="mobile-nav-links">
+            <a href="#about" class="mobile-nav-link">About</a>
+            <a href="#services" class="mobile-nav-link">Services</a>
+            <a href="#approach" class="mobile-nav-link">Approach</a>
+            <a href="#contact" class="mobile-nav-link">Contact</a>
+        </nav>
+        <div class="mobile-nav-cta">
+            <a href="#contact" class="btn-primary mobile-nav-link">LET'S TALK ↗</a>
+        </div>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <div class="hero-eyebrow">STRATEGY / INNOVATION / EXECUTION</div>
+                <h1 class="hero-title">WE BRING<br>THE ADVANTAGE.</h1>
+                <p class="hero-description">
+                    Marketing, innovation, process mapping, project management and AI consulting for businesses and startups ready to plan smarter, execute better and grow with clarity.
+                </p>
+                <div class="hero-actions">
+                    <a href="#contact" class="btn-primary">START A CONVERSATION ↗</a>
+                    <a href="#services" class="btn-outline">OUR EXPERTISE</a>
+                </div>
+            </div>
+
+            <div class="hero-visual" aria-hidden="true">
+                <!-- Abstract Architectural Systems Diagram -->
+                <svg class="system-diagram" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="20" y="20" width="360" height="360" stroke="rgba(17,19,24,0.08)" stroke-width="1" />
+                    <line x1="20" y1="200" x2="380" y2="200" stroke="rgba(17,19,24,0.1)" stroke-width="1" stroke-dasharray="4 4" />
+                    <line x1="200" y1="20" x2="200" y2="380" stroke="rgba(17,19,24,0.1)" stroke-width="1" stroke-dasharray="4 4" />
+                    
+                    <circle cx="200" cy="200" r="120" stroke="var(--text-primary)" stroke-width="1.5" />
+                    <circle cx="200" cy="200" r="60" stroke="var(--accent)" stroke-width="2" stroke-dasharray="6 6" />
+                    
+                    <!-- Connected Nodes -->
+                    <circle cx="200" cy="80" r="6" fill="var(--text-primary)" />
+                    <circle cx="320" cy="200" r="6" fill="var(--accent)" />
+                    <circle cx="200" cy="320" r="6" fill="var(--text-primary)" />
+                    <circle cx="80" cy="200" r="6" fill="var(--text-primary)" />
+                    
+                    <path d="M200 80 L320 200 L200 320 L80 200 Z" stroke="rgba(200,90,50,0.4)" stroke-width="1.5" />
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- CREDIBILITY STRIP -->
+    <section class="credibility-strip" aria-label="Key Facts">
+        <div class="container credibility-grid">
+            <div class="credibility-item">
+                <span class="credibility-val">15+ YEARS EXPERIENCE</span>
+                <span class="credibility-lbl">Proven Industry Track Record</span>
+            </div>
+            <div class="credibility-item">
+                <span class="credibility-val">BANKING</span>
+                <span class="credibility-lbl">Domain Expertise</span>
+            </div>
+            <div class="credibility-item">
+                <span class="credibility-val">CONSUMER GOODS</span>
+                <span class="credibility-lbl">Domain Expertise</span>
+            </div>
+            <div class="credibility-item">
+                <span class="credibility-val">STRATEGY + TECH</span>
+                <span class="credibility-lbl">Integrated Approach</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="about-section" id="about">
+        <div class="container about-grid">
+            <div>
+                <span class="section-label">ABOUT VELIXA PRIME</span>
+                <h2 class="about-statement">Practical strategy.<br>Real results.<br>A true growth partner.</h2>
+            </div>
+            <div class="about-body">
+                <p>
+                    Velixa Prime brings marketing, innovation process mapping, project management, and AI consulting expertise to businesses and startups.
+                </p>
+                <p>
+                    With over 15 years of experience across banking and consumer goods, we help you plan smarter, execute better, and grow with clarity.
+                </p>
+                <div class="about-highlight-box">
+                    <p>"We combine structured consulting methodologies with practical technology applications to turn operational complexity into strategic market advantage."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section class="services-section" id="services">
+        <div class="container">
+            <div class="services-header">
+                <div>
+                    <span class="section-label">OUR EXPERTISE</span>
+                    <h2 class="services-title">Capabilities</h2>
+                </div>
+            </div>
+
+            <div class="services-list">
+                <!-- 01 Marketing -->
+                <div class="service-row">
+                    <span class="service-num">01</span>
+                    <h3 class="service-name">Marketing</h3>
+                    <p class="service-desc">Positioning, marketing strategy, go-to-market thinking and sustainable growth frameworks designed for long-term equity.</p>
+                    <span class="service-arrow">↗</span>
+                </div>
+
+                <!-- 02 Innovation -->
+                <div class="service-row">
+                    <span class="service-num">02</span>
+                    <h3 class="service-name">Innovation</h3>
+                    <p class="service-desc">Turning market opportunities and unstructured ideas into actionable, practical initiatives and modern growth models.</p>
+                    <span class="service-arrow">↗</span>
+                </div>
+
+                <!-- 03 Process Mapping -->
+                <div class="service-row">
+                    <span class="service-num">03</span>
+                    <h3 class="service-name">Process Mapping</h3>
+                    <p class="service-desc">Understanding existing complex workflows, identifying key operational inefficiencies, and designing clearer, streamlined processes.</p>
+                    <span class="service-arrow">↗</span>
+                </div>
+
+                <!-- 04 Project Management -->
+                <div class="service-row">
+                    <span class="service-num">04</span>
+                    <h3 class="service-name">Project Management</h3>
+                    <p class="service-desc">End-to-end planning, coordination, cross-functional accountability, and turning high-level strategic initiatives into flawless execution.</p>
+                    <span class="service-arrow">↗</span>
+                </div>
+
+                <!-- 05 AI Consulting -->
+                <div class="service-row">
+                    <span class="service-num">05</span>
+                    <h3 class="service-name">AI Consulting</h3>
+                    <p class="service-desc">Identifying practical, responsible applications of AI that enhance operational performance, executive decision-making, and customer experiences.</p>
+                    <span class="service-arrow">↗</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PHILOSOPHY BREAK SECTION -->
+    <section class="philosophy-section">
+        <div class="container philosophy-content">
+            <h2 class="philosophy-quote">
+                GOOD STRATEGY SHOULD<br>MAKE THE NEXT MOVE<br>CLEARER.
+            </h2>
+            <p class="philosophy-sub">
+                We combine experience, structured thinking and emerging technology to turn complexity into action.
+            </p>
+        </div>
+    </section>
+
+    <!-- APPROACH SECTION -->
+    <section class="approach-section" id="approach">
+        <div class="container">
+            <span class="section-label">HOW WE WORK</span>
+            <h2 class="services-title">A Disciplined Methodology</h2>
+
+            <div class="approach-grid">
+                <div class="approach-card">
+                    <div class="approach-step">01</div>
+                    <h3 class="approach-title">UNDERSTAND</h3>
+                    <p class="approach-desc">We deeply analyze the client's business, strategic objectives, operational context, and core competitive challenges.</p>
+                </div>
+
+                <div class="approach-card">
+                    <div class="approach-step">02</div>
+                    <h3 class="approach-title">MAP</h3>
+                    <p class="approach-desc">We identify the clearest, most direct path between your current operational state and desired growth outcome.</p>
+                </div>
+
+                <div class="approach-card">
+                    <div class="approach-step">03</div>
+                    <h3 class="approach-title">MOVE</h3>
+                    <p class="approach-desc">We convert high-level strategy into coordinated, practical execution and measurable operational momentum.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE SECTION -->
+    <section class="experience-section">
+        <div class="container experience-grid">
+            <div class="experience-big-stat">
+                <span class="experience-number">15+</span>
+                <span class="experience-stat-label">Years of Experience</span>
+            </div>
+            <div>
+                <p style="font-size: 1.15rem; color: var(--text-secondary); margin-bottom: 2rem;">
+                    Deep sector experience spanning banking and consumer goods, empowering executive leadership with clarity and market agility.
+                </p>
+                <div class="experience-keywords">
+                    <div class="keyword-item">STRATEGY</div>
+                    <div class="keyword-item">INNOVATION</div>
+                    <div class="keyword-item">OPERATIONS</div>
+                    <div class="keyword-item">TECHNOLOGY</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA SECTION -->
+    <section class="cta-section">
+        <div class="container cta-container">
+            <h2 class="cta-title">YOUR NEXT MOVE<br>STARTS HERE.</h2>
+            <p class="cta-desc">Let's turn your next challenge into an advantage.</p>
+            <a href="#contact" class="btn-primary" style="padding: 1.25rem 2.5rem; font-size: 0.95rem;">START A CONVERSATION ↗</a>
+        </div>
+    </section>
+
+    <!-- FOOTER / CONTACT -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        VELIXA PRIME <span class="logo-dot"></span>
+                    </a>
+                    <p class="footer-tagline">We bring the advantage.</p>
+                    
+                    <!-- Contact Placeholder -->
+                    <div class="contact-placeholder-box">
+                        <p>Inquiries & Consultations</p>
+                        <a href="mailto:hello@velixaprime.com" class="contact-email">hello@velixaprime.com</a>
+                        <p style="margin-top: 0.5rem; font-size: 0.75rem; color: var(--text-muted-dark);">Primary Office Location: [City, Country Placeholder]</p>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="footer-col-title">NAVIGATION</div>
+                    <div class="footer-links">
+                        <a href="#about">About Velixa Prime</a>
+                        <a href="#services">Our Expertise</a>
+                        <a href="#approach">How We Work</a>
+                        <a href="#contact">Contact Us</a>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="footer-col-title">CAPABILITIES</div>
+                    <div class="footer-links">
+                        <a href="#services">Marketing Strategy</a>
+                        <a href="#services">Process Mapping</a>
+                        <a href="#services">Project Management</a>
+                        <a href="#services">AI Consulting</a>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="footer-col-title">GROWTH PARTNER</div>
+                    <p style="font-size: 0.875rem; color: var(--text-muted-dark); line-height: 1.6;">
+                        Helping businesses and startups plan smarter, execute better, and grow with clarity.
+                    </p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>© 2026 Velixa Prime. All rights reserved.</div>
+                <a href="#hero" class="back-to-top">BACK TO TOP ↑</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTION LOGIC (VANILLA JS) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Header Sticky Transition on Scroll
+            const header = document.getElementById('header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 40) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+
+            // Mobile Hamburger Drawer Toggle
+            const mobileToggle = document.getElementById('mobileToggle');
+            const mobileOverlay = document.getElementById('mobileOverlay');
+            const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+            function toggleMobileMenu() {
+                const isOpen = mobileOverlay.classList.contains('active');
+                if (isOpen) {
+                    mobileOverlay.classList.remove('active');
+                    mobileToggle.setAttribute('aria-expanded', 'false');
+                    document.body.style.overflow = '';
+                } else {
+                    mobileOverlay.classList.add('active');
+                    mobileToggle.setAttribute('aria-expanded', 'true');
+                    document.body.style.overflow = 'hidden';
+                }
+            }
+
+            mobileToggle.addEventListener('click', toggleMobileMenu);
+
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (mobileOverlay.classList.contains('active')) {
+                        toggleMobileMenu();
+                    }
+                });
+            });
+
+            // IntersectionObserver for Subtle Scroll Reveal Effects
+            const revealElements = document.querySelectorAll('.approach-card, .service-row, .about-grid, .experience-grid');
+            
+            if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                const revealObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                            revealObserver.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.1,
+                    rootMargin: '0px 0px -40px 0px'
+                });
+
+                revealElements.forEach(el => {
+                    el.style.opacity = '0';
+                    el.style.transform = 'translateY(20px)';
+                    el.style.transition = 'opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
+                    revealObserver.observe(el);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
